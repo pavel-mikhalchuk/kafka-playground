@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: producer
+  labels:
+    app.kubernetes.io/name: producer
+    app.kubernetes.io/instance: producer
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: producer
+    app.kubernetes.io/instance: producer
