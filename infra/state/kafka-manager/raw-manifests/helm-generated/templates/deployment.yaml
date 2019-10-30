@@ -1,0 +1,71 @@
+---
+# Source: kafka-manager/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-manager
+  labels:
+    app.kubernetes.io/instance: kafka-manager
+    app.kubernetes.io/managed-by: Tiller
+    app.kubernetes.io/name: kafka-manager
+    app.kubernetes.io/version: 1.3.3.22
+    helm.sh/chart: kafka-manager-2.2.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-manager
+      release: kafka-manager
+  template:
+    metadata:
+      labels:
+        app: kafka-manager
+        release: kafka-manager
+    spec:
+      serviceAccountName: kafka-manager
+      containers:
+        - name: kafka-manager
+          image: "zenko/kafka-manager:1.3.3.22"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: kafka-manager
+              containerPort: 9000
+              protocol: TCP
+          env:
+            - name: ZK_HOSTS
+              value: "kafka-zookeeper:2181"
+            - name: JAVA_OPTS
+              value: 
+            - name: APPLICATION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: kafka-manager
+                  key: applicationSecret
+            - name: KAFKA_MANAGER_AUTH_ENABLED
+              value: "false"
+            - name: KAFKA_MANAGER_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: kafka-manager
+                  key: basicAuthUsername
+            - name: KAFKA_MANAGER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: kafka-manager
+                  key: basicAuthPassword
+          livenessProbe:
+            failureThreshold: 10
+            httpGet:
+              path: /api/health
+              port: kafka-manager
+            initialDelaySeconds: 60
+            timeoutSeconds: 30
+            
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: kafka-manager
+            
+          resources:
+            {}
+            

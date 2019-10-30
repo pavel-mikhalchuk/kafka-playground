@@ -1,9 +1,9 @@
 #!/bin/bash
 
-repo=bitnami
-app=kafka
-release=kafka
-version=6.1.3
+repo=stable
+app=kafka-manager
+release=kafka-manager
+version=2.2.0
 namespace=kafka
 workdir="$(pwd)/../../state/$app/"
 
