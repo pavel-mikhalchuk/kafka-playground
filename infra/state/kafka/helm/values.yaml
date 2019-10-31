@@ -1,3 +1,8 @@
+metrics:
+  jmx:
+    enabled: true
+    jmxPort: 5555
+
 persistence:
   enabled: true
   accessModes:
