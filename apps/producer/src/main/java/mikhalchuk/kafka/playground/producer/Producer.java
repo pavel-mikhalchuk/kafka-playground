@@ -13,6 +13,6 @@ public class Producer {
   }
 
   void send(String message) {
-    producer.send("simple-message", message);
+    producer.send("clicks", message);
   }
 }
