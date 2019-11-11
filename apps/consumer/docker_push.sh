@@ -1,0 +1,1 @@
+docker push pavelmikhalchuk/kafka-consumer:latest
