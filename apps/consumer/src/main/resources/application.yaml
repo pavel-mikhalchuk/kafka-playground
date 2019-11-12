@@ -2,3 +2,9 @@ spring:
   kafka:
     consumer:
       bootstrap-servers: kafka:9092
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
