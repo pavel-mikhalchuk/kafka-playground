@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: producer
     app.kubernetes.io/instance: producer
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app.kubernetes.io/name: producer
