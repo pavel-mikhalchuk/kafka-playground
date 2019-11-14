@@ -1,1 +1,0 @@
-kubectl -n argocd apply -f app-of-apps.yaml
