@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: clicks-report
     app.kubernetes.io/instance: clicks-report
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: clicks-report
