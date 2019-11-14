@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: clicks-report
+  labels:
+    app.kubernetes.io/name: clicks-report
+    app.kubernetes.io/instance: clicks-report
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: clicks-report
+    app.kubernetes.io/instance: clicks-report

@@ -1,0 +1,1 @@
+docker build -t pavelmikhalchuk/clicks-report:latest -f Dockerfile .

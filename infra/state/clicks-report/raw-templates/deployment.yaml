@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clicks-report
+  labels:
+    app.kubernetes.io/name: clicks-report
+    app.kubernetes.io/instance: clicks-report
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: clicks-report
+      app.kubernetes.io/instance: clicks-report
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: clicks-report
+        app.kubernetes.io/instance: clicks-report
+    spec:
+      containers:
+        - name: clicks-report  
+          image: "pavelmikhalchuk/clicks-report:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
