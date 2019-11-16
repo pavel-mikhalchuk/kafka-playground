@@ -12,7 +12,6 @@ generated_manifests=$workdir/raw-manifests/helm-generated
 # Helm values.yaml
 mkdir -p $helm
 touch $helm/values.yaml
-cp $chart_path/values.yaml $helm
 
 # K8S raw-manifests
 rm -rf $generated_manifests
