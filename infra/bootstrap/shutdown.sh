@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd kubernetes 
-./kubernetes/shutdown.sh
+./shutdown.sh
 cd ..
