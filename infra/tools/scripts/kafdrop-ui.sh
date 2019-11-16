@@ -1,1 +1,1 @@
-kubectl port-forward svc/kafdrop -n kafka 9000:9000
+nohup kubectl port-forward svc/kafdrop -n kafka 9000:9000 </dev/null >/dev/null 2>&1 &

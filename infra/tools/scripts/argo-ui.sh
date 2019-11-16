@@ -1,1 +1,1 @@
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+nohup kubectl port-forward svc/argocd-server -n argocd 8080:443 </dev/null >/dev/null 2>&1 &

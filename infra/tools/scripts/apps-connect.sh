@@ -1,0 +1,1 @@
+./argo-ui.sh && ./kafka-manager-ui.sh && ./kafdrop-ui.sh
