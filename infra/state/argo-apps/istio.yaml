@@ -17,9 +17,9 @@ spec:
     directory: 
       recurse: true
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    # automated:
+    #   prune: true
+    #   selfHeal: true
   ignoreDifferences:
   - group: admissionregistration.k8s.io
     kind: MutatingWebhookConfiguration
