@@ -13,14 +13,17 @@ resource "google_container_cluster" "k8s_terraform" {
   }
 
   node_config {
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-    ]
+    preemptible  = true
+    machine_type = "n1-standard-2"
 
     metadata = {
       disable-legacy-endpoints = "true"
     }
+
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/logging.write",
+      "https://www.googleapis.com/auth/monitoring",
+    ]
   }
 
   timeouts {
