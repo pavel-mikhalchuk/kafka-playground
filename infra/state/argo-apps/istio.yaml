@@ -20,3 +20,9 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+  - group: admissionregistration.k8s.io/v1beta1
+    kind: MutatingWebhookConfiguration
+    name: istio-sidecar-injector
+    jsonPointers:
+      - /webhooks/clientConfig/caBundle
