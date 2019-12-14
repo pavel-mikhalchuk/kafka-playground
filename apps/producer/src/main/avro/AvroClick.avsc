@@ -1,0 +1,12 @@
+{
+  "namespace": "mikhalchuk.kafka.playground.producer.avro",
+  "type": "record",
+  "name": "AvroClick",
+  "fields": [
+    {
+      "name": "buttonId",
+      "type": "string",
+      "avro.java.string": "String"
+    }
+  ]
+}
