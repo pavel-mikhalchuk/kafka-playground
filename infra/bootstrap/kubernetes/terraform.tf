@@ -1,5 +1,5 @@
 resource "google_container_cluster" "k8s_terraform" {
-  project                = "kafka-playground-666"
+  project                = "kafka-playground-666-261614"
   name                   = "kafka-playground"
   location               = "us-central1-a"
   min_master_version     = "1.14.8-gke.12"
