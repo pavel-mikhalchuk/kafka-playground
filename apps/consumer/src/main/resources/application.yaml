@@ -5,6 +5,8 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    properties:
+      schema.registry.url: http://kafka-cp-schema-registry.kafka:8081
 
 management:
   endpoints:
