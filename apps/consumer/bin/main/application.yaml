@@ -1,4 +1,8 @@
 spring:
   kafka:
-    producer:
-      bootstrap-servers: kafka:9092
+    bootstrap-servers: kafka:9092
+    consumer:
+      group: super-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
