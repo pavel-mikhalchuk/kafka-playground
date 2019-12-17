@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: consumer
     app.kubernetes.io/instance: consumer
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app.kubernetes.io/name: consumer
